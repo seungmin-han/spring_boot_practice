@@ -37,7 +37,7 @@ public class DemoApplication {
 
 	@PostMapping("/file")
 	public File fileUpload(@RequestParam(value = "files") MultipartFile[] files) {
-		File file = new File(files[0].getOriginalFilename());
+		File file = new File("\\temp\\"+files[0].getOriginalFilename());
 		try {
 			files[0].transferTo(file);
 		} catch(Exception exception) {
